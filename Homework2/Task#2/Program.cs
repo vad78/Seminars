@@ -2,31 +2,38 @@
 645 -> 5
 78 -> третьей цифры нет
 32679 -> 6*/
-int getNum()
+int GetNum()
 {
     int num = 0;
     bool numCorrect = false;
     Console.Write("Enter number: ");
-    while(numCorrect==false)
+    while(numCorrect==false||num<100)
     {
         numCorrect = Int32.TryParse(Console.ReadLine(), out num);
-        Console.Write("Enter correct number: ");
+        if(numCorrect==false)
+        {
+             Console.Write("Enter correct number: ");
+        }
+       else
+       {
+            if(num<100)
+            {
+                Console.WriteLine("The number is less than three digits"); 
+                Console.Write("Enter correct number: ");
+            }
+       }
+       
     }
     return num;
 }
-void outputLastDigit(int num)
+void OutputLastDigit(int num)
 {
-   if(num<999)
-   {
-      Console.WriteLine("The number is less than three digits"); 
-   }
-   else
-   {
-        int result = num/100%10;
-        Console.WriteLine($"The third digit is {result}");
-   }
+   
+    int result = num/100%10;
+    Console.WriteLine($"The third digit is {result}");
+   
    
 }
 
-int Number = getNum();
-outputLastDigit(Number);
+int Number = GetNum();
+OutputLastDigit(Number);
