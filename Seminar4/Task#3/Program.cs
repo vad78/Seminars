@@ -1,10 +1,11 @@
 ﻿int [] SetArray()
 {
+    Random rand = new Random();
     int [] myArray = new int[8];
     for(int i =0;i<8;i++)
     {
        
-        myArray[i] = new Random().Next(0, 2);
+        myArray[i] = rand.Next(0, 2);
     }
 return myArray;
 }
