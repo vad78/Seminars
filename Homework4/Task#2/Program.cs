@@ -46,6 +46,6 @@ class DigitsSum
              sum = sum+remainder;
              num = num/10;   
         }
-        return sum;
+        return Math.Abs(sum);
    }
 }
