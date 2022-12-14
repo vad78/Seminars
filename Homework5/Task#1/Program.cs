@@ -11,7 +11,6 @@ class Program
         myArray.Print();
         int count = myArray.CalculateEvenNumbersCount();
         Console.WriteLine($"Count of even numbers is {count}");
-
     }
     class Input
     {
@@ -38,12 +37,7 @@ class Program
     {
         private int arraySize;
         private int[] array;
-        public CalculatedArray()
-        {
-            arraySize = 0;
-            int [] arr = new int[] {0};
-            this.array = arr;
-        }
+        
         public CalculatedArray(int size)
         {
             this.arraySize = size;
