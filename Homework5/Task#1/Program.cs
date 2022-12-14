@@ -33,6 +33,7 @@ class Program
         }
 
     }
+    //method to get array from object is implemented
     class CalculatedArray
     {
         private int arraySize;
@@ -54,6 +55,7 @@ class Program
             }
             this.array = arr;
         }
+        // private methods
         public void Print()
         {
             PrintArray();
@@ -67,6 +69,7 @@ class Program
             int count = CalcEvenCount();
             return count;
         }
+        // private methods
         private int CalcEvenCount()
         {
             int count=0;
