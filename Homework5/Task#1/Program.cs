@@ -9,6 +9,9 @@ class Program
         int number = MyNum.Num();
         CalculatedArray myArray = new CalculatedArray(number);
         myArray.Print();
+        int count = myArray.CalculateEvenNumbersCount();
+        Console.WriteLine($"Count of even numbers is {count}");
+
     }
     class Input
     {
@@ -54,6 +57,26 @@ class Program
         public void Print()
         {
             PrintArray();
+        }
+        public int[]  GetArray()
+        {
+            return this.array;
+        }
+        public int CalculateEvenNumbersCount()
+        {
+            int count = CalcEvenCount();
+            return count;
+        }
+        private int CalcEvenCount()
+        {
+            int count=0;
+            for(int i=0;i<this.array.Length;i++)
+            {
+                if((this.array[i]%2)==0) count++;
+                
+            }
+            return count;
+
         }
         private void PrintArray()
         {
