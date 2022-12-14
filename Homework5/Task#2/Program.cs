@@ -36,7 +36,6 @@ class Program
      {
         private int arraySize;
         private int[] array;
-        private int count;
         public SummArrayNum(int size)
         {
             this.arraySize = size;
@@ -44,7 +43,7 @@ class Program
             Random myRandom = new Random();
             for(int i=0;i<arr.Length;i++)
             {
-                arr[i] = myRandom.Next(1, 1000);
+                arr[i] = myRandom.Next(-100, 100);
             }
             this.array = arr;
         }
