@@ -6,6 +6,11 @@ class Program
     {
         Input MyNum = new Input();
         int number = MyNum.Num();
+        Array myArray = new Array(number);
+        myArray.Print();
+        int max = myArray.Max();
+        int min = myArray.Min();
+        Console.WriteLine($"{max} - {min} = {max-min}");
     }
     class Input
     {
@@ -49,10 +54,22 @@ class Program
         {
             return this.array;
         }
+        public int Max()
+        {
+            int max = FindMaxMin().Item1;
+            return max;
+        }
+        public int Min()
+        {
+            int min = FindMaxMin().Item2;
+            return min;
+        }
+
          private void PrintArray()
         {
             Console.WriteLine("Array: "+string.Join(", ", this.array));
         }
+
         private (int,int) FindMaxMin()
         {
             int max = this.array[0],
