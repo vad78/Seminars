@@ -34,16 +34,14 @@ class Program
     }
      class SummArrayNum
      {
-        private int arraySize;
         private int[] array;
         public SummArrayNum(int size)
         {
-            this.arraySize = size;
-            int [] arr = new int[arraySize];
+            int [] arr = new int[size];
             Random myRandom = new Random();
             for(int i=0;i<arr.Length;i++)
             {
-                arr[i] = myRandom.Next(-100, 100);
+                arr[i] = myRandom.Next(-100, 101);
             }
             this.array = arr;
         }

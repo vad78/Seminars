@@ -8,8 +8,10 @@ class Program
         int number = MyNum.Num();
         Array myArray = new Array(number);
         myArray.Print();
-        int max = myArray.Max();
-        int min = myArray.Min();
+        //int max = myArray.Max();
+        //int min = myArray.Min();
+        double max = myArray.Max();
+        double min = myArray.Min();
         Console.WriteLine($"{max} - {min} = {max-min}");
     }
     class Input
@@ -34,15 +36,17 @@ class Program
     class Array
     {
         //private int arraySize;
-        private int[] array;
+        //private int[] array;
+        private double[] array;
         public Array(int size)
         {
             //this.arraySize = size;
-            int [] arr = new int[size];
+            double [] arr = new double [size];
             Random myRandom = new Random();
             for(int i=0;i<arr.Length;i++)
             {
-                arr[i] = myRandom.Next(-100, 100);
+                //arr[i] = myRandom.Next(-100, 101);
+                arr[i] = (myRandom.Next(-100, 101)*myRandom.NextDouble());
             }
             this.array = arr;
         }
@@ -50,18 +54,23 @@ class Program
         {
             PrintArray();
         }
-        public int[]  GetArray()
+        //public int[]  GetArray()
+        public double[]  GetArray()
         {
             return this.array;
         }
-        public int Max()
+        //public int Max()
+        public double Max()
         {
-            int max = FindMaxMin().Item1;
+            //int max = FindMaxMin().Item1;
+            double max = FindMaxMin().Item1;
             return max;
         }
-        public int Min()
+        //public int Min()
+        public double Min()
         {
-            int min = FindMaxMin().Item2;
+            //int min = FindMaxMin().Item2;
+            double min = FindMaxMin().Item2;
             return min;
         }
 
@@ -70,9 +79,12 @@ class Program
             Console.WriteLine("Array: "+string.Join(", ", this.array));
         }
 
-        private (int,int) FindMaxMin()
+        //private (int,int) FindMaxMin()
+        private (double,double) FindMaxMin()
         {
-            int max = this.array[0],
+            /*int max = this.array[0],
+                min = this.array[0];*/
+                double max = this.array[0],
                 min = this.array[0];
 
             for(int i = 0;i < this.array.Length;i++)

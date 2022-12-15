@@ -35,13 +35,12 @@ class Program
     //method to get array from object is implemented
     class CalculatedArray
     {
-        private int arraySize;
         private int[] array;
         
         public CalculatedArray(int size)
         {
-            this.arraySize = size;
-            int [] arr = new int[arraySize];
+            
+            int [] arr = new int[size];
             Random myRandom = new Random();
             for(int i=0;i<arr.Length;i++)
             {
