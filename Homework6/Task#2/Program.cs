@@ -6,22 +6,28 @@ class Program
     public static void Main(string[] args)
     {
         Input MyNum = new Input();
-        int k1 = MyNum.SetNumberForCoordinates("k1");
-        int b1 = MyNum.SetNumberForCoordinates("b1");
-        int k2 = MyNum.SetNumberForCoordinates("k2");
-        int b2 = MyNum.SetNumberForCoordinates("b2");
+        double k1 = MyNum.SetNumberForCoordinates("k1");
+        double b1 = MyNum.SetNumberForCoordinates("b1");
+        double k2 = MyNum.SetNumberForCoordinates("k2");
+        double b2 = MyNum.SetNumberForCoordinates("b2");
         MyMath coordinates = new MyMath(k1,b1,k2,b2);
-        coordinates.CalcCoordinatesForCross();
+        try
+        {
+            coordinates.CalcCoordinatesForCross();
+        }
+        catch
+        {
+            Console.WriteLine("Devide on zero");
+        }
         
-
-
+ 
     }
     class Input
     {
         private int number;
-        public int SetNumberForCoordinates(string number)
+        public double SetNumberForCoordinates(string number)
         {
-          int num = InputFactor(number); 
+          double num = InputFactor(number); 
           return num;
         }
         public int ArraySize()
@@ -40,11 +46,11 @@ class Program
             this.number = num;
 
         } 
-        private int InputFactor(string number)
+        private double InputFactor(string number)
         {
-            int num = 0;
+            double num = 0;
             Console.Write($"Enter number for {number}: ");
-            while((Int32.TryParse(Console.ReadLine(), out num)==false)||num<=0)
+            while((Double.TryParse(Console.ReadLine(), out num)==false)||num<=0)
             {
                 Console.Write($"Enter correct number for {number}:");
             }
@@ -72,8 +78,8 @@ class Program
     }
     class MyMath
     {
-        private int numForK1, numForB1, numForK2, numForB2
-        public MyMath(int k1, int b1, int k2, int b2)
+        private double numForK1, numForB1, numForK2, numForB2;
+        public MyMath(double k1, double b1, double k2, double  b2)
         {
             this.numForK1 = k1;
             this.numForB1 = b1;
@@ -85,16 +91,17 @@ class Program
             double x, y;
             x = CalcCross().Item1;
             y = CalcCross().Item2;
-            Console.WriteLine($"({x}, y{y})");
+            Console.WriteLine($"({x}; {y})");
         }
         private (double,double) CalcCross()
         {
             double x, y;
-
+            x =(this.numForB2-this.numForB1)/(this.numForK1-this.numForK2);
+            y = this.numForK1 * x+this.numForB1;
             return (x,y);
         }
     }
    
-      
+  
     
 }
