@@ -11,8 +11,8 @@ namespace Seminars
         public static void Main()
         {
             Input myMatrixSize = new Input();
-            int rowCount = myMatrixSize.EnterMatrixSize().Item1;
-            int cellCount = myMatrixSize.EnterMatrixSize().Item2;
+            int rowCount = myMatrixSize.ArraySize();
+            int cellCount = myMatrixSize.ArraySize();
             MyArrays myArray = new MyArrays(rowCount,cellCount);
             myArray.Print();
         }
