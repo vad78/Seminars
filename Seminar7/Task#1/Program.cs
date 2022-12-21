@@ -7,7 +7,7 @@ class Program
 {
     public static void Main(string[] args)
     {
-       MyMatrix matrix1 =new MyMatrix(2,2);
+       MyMatrix matrix1 =new MyMatrix(2,5);
        matrix1.PrintArray();
     }
 class MyMatrix
@@ -29,11 +29,13 @@ class MyMatrix
     public void PrintArray()
     {
        
+        
         for(int i = 0; i<this.matrixArray.GetLength(0); i++)
         {
+            Console.WriteLine();
             for(int j = 0; j<this.matrixArray.GetLength(1); j++)
             {
-                Console.WriteLine(this.matrixArray[i,j]);
+                Console.Write(this.matrixArray[i, j] + " ");
             }
         }
     }
