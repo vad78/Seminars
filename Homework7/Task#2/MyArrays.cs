@@ -34,8 +34,9 @@ namespace Seminar2
                 {
                      Console.Write(this.array[i, j] + " ");
                 }
-                Console.WriteLine();
+                
             }
+            Console.WriteLine();
         }
     }
 }
