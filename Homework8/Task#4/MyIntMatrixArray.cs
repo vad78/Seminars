@@ -24,18 +24,18 @@ namespace Task4
                     Console.WriteLine();
                 }
             } 
-
-            
         }
         private void FillArray()
         {
+            int indexOfDictionary = 0;
             for(int i = 0; i < 2; i++)
             {
                 for(int j = 0; j < 2; j++)
                 {
                     for(int k = 0; k < 2; k++)
                     {
-                        this.myArray[i,j,k] = this.dictionary[i+j+k]; 
+                        this.myArray[i,j,k] = this.dictionary[indexOfDictionary]; 
+                        indexOfDictionary++;
                     }
                 }
             } 
@@ -51,7 +51,6 @@ namespace Task4
                numExists = true;
                 while(numExists)
                 {
-                    
                     for(int j = 0; j<8; j++)
                     {
                         if(this.dictionary[j] == number) 
@@ -62,10 +61,8 @@ namespace Task4
                         else{numExists = false;}
                     }
                 number = myRandom.Next(0,100);   
-                    
                 }
-             this.dictionary[i] = number;   
-                
+             this.dictionary[i] = number; 
             }
         }
     }
