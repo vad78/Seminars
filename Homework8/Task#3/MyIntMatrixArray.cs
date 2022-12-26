@@ -20,7 +20,7 @@ namespace Task3
         }
         public void FillArray2(int cellCount)
         {
-            this.array2 = new int [this.array.GetLength(0),cellCount];
+            this.array2 = new int [this.array.GetLength(1),cellCount];
             Random myRandomArray = new Random();
             for(int i = 0;i < this.array.GetLength(0);i++)
             {
@@ -37,14 +37,14 @@ namespace Task3
         }
         private int [,] MultiplyArrays()
         {
-            Array resultArray = new int [this.array.GetLength(0), this.array2.GetLength(1)];
+            int[,] resultArray = new int [this.array.GetLength(0), this.array2.GetLength(1)];
             for (int i= 0; i < this.array.GetLength(0); i++)
             {
-                for (int j= 0; j < this.array2.GetLength(1); j++)
+                for (int j = 0; j < this.array2.GetLength(1); j++)
                 {
-                    for(int k = 0;k<)
+                    for(int k = 0;k<this.array2.GetLength(0); k++)
                     {
-                        resultArray[j,k]=;
+                        resultArray[i,j]= resultArray[i,j] + this.array[i,k]*this.array2[k,j];
                     }
                 }
 

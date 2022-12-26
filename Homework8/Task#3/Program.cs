@@ -12,6 +12,8 @@
             int cellCountForArray2 = myMatrixSize.IndexOfElement(2);
             myArray.FillArray2(cellCountForArray2);
             myArray.PrintArrays();
+            myArray.PrintMultipleMatrix();
+            
         }
     }
 }
