@@ -34,13 +34,39 @@ namespace Task5
             int x=0,
                 y=0,
                 count = 1;
-                for(int i = 0;i<this.myArray.GetLength(0);i++)
+            y = MoveLeft(y, x, count).Item1;
+            x = MoveLeft(y, x, count).Item2;
+            count =  MoveLeft(y, x, count).Item3;
+            y = MoveDown(y, x, count).Item1;
+            x = MoveDown(y, x, count).Item2;
+            count =  MoveDown(y, x, count).Item3; 
+                
+                
+                 
+        }
+        private (int,int,int) MoveLeft(int y, int x, int count)
+        {
+            for(int i = 0;i<this.myArray.GetLength(0);i++)
                 {
                     x = i;
                     this.myArray[y,x] = count;
                     count++;
                 }
-                 
+                return (x,y,count);
+                
+        }
+        private (int,int,int) MoveDown(int y, int x, int count)
+        {
+           
+           
+            for(int i = 1 ;i<this.myArray.GetLength(1);i++)
+                {
+                    y=i;
+                    this.myArray[y,x] = count;
+                    count++;
+                }
+            return (x,y,count);
+                
         }
     }    
        
