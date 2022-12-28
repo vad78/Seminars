@@ -37,13 +37,26 @@ namespace Task5
                 minY = 0,
                 maxX = this.myArray.GetLength(0)-1,
                 maxY = this.myArray.GetLength(1)-1;
+                bool firstSideFilled = false,
+                     secondSideFilled = false,
+                     thirdSideFilled = false,
+                     fourthSideFilled = false;
+
             for(int i = 1;i<=this.size;i++)
             {
-                myArray[y,x] = i;               
+                myArray[y,x] = i; 
+                if (firstSideFilled&&secondSideFilled&&thirdSideFilled&&fourthSideFilled)
+                {
+                    minX+=1;
+                    minY+=1;
+                    maxX+=1;
+                    maxY+=1;
+                }              
                 if(y==minY&&x<maxX) 
                 {
                     x+=1;
-                    myArray[y,x] = i; 
+                    myArray[y,x] = i;
+                    firstSideFilled = true; 
                 }
                 else
                 {
@@ -51,6 +64,7 @@ namespace Task5
                     {
                         y+=1;
                         myArray[y,x] = i;
+                        secondSideFilled = true;
                     }
                     else
                     {
@@ -58,6 +72,7 @@ namespace Task5
                         {
                             x-=1;
                             myArray[y,x] = i;
+                            thirdSideFilled = true;
                         }
                         else
                         {
@@ -65,6 +80,7 @@ namespace Task5
                             {
                                 y=-1;
                                 myArray[y,x] = i;
+                                fourthSideFilled = true;
                             }
                         }
                     }
