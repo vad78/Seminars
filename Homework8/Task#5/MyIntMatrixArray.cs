@@ -7,6 +7,7 @@ namespace Task5
         public MyIntMatrixArray(int sizeOfMatrix)
         {
             this.myArray = new int[sizeOfMatrix,sizeOfMatrix];
+            this.size = sizeOfMatrix;
             
         }
         public void Print()
@@ -32,7 +33,21 @@ namespace Task5
         
         private void FillArray()
         {
+            int x = 0,
+                y = 0,
+                steps = this.size - 1;
+            bool isStepEven = true;
             
+            for(int i = 1;i<=this.size;i++)
+            {
+                myArray[y,x] = i;
+                if(isStepEven)
+                {
+                    x+=1;
+                    myArray[y,x] = i;
+                }
+
+            }
             
             
         }
