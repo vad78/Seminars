@@ -51,6 +51,10 @@ namespace Task5
                     minY+=1;
                     maxX-=1;
                     maxY-=1;
+                    firstSideFilled = false;
+                    secondSideFilled = false;
+                    thirdSideFilled = false;
+                    fourthSideFilled = false;
                 }              
                 if(y==minY&&x<maxX) 
                 {
@@ -76,9 +80,9 @@ namespace Task5
                         }
                         else
                         {
-                            if(x==minX&&y<minY-1)
+                            if(x==minX&&y>=minY+1)
                             {
-                                y=-1;
+                                y-=1;
                                 myArray[y,x] = i;
                                 fourthSideFilled = true;
                             }
