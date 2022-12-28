@@ -35,15 +35,29 @@ namespace Task5
         {
             int x = 0,
                 y = 0,
-                steps = this.size - 1;
-            bool isStepEven = true;
+                steps = this.size;
+            bool isStepEven = false,
+                 isRow =true; 
+                 
+
             
             for(int i = 1;i<=this.size;i++)
             {
                 myArray[y,x] = i;
-                if(isStepEven)
+                if(i==)
+                if(isStepEven&&isRow)
                 {
                     x+=1;
+                    myArray[y,x] = i;
+                }
+                if(isStepEven&&!isRow)
+                {
+                    y+=1;
+                    myArray[y,x] = i;
+                }
+                if(!isStepEven&&isRow)
+                {
+                    x-=1;
                     myArray[y,x] = i;
                 }
 
