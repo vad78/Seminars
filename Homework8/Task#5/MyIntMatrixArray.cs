@@ -35,32 +35,22 @@ namespace Task5
         {
             int x = 0,
                 y = 0,
-                steps = this.size;
-            bool isStepEven = false,
-                 isRow =true; 
-                 
-
-            
+                minX = 0,
+                minY = 0,
+                maxX = this.myArray.GetLength(0)-1,
+                maxY = this.myArray.GetLength(1)-1;
             for(int i = 1;i<=this.size;i++)
             {
-                myArray[y,x] = i;
-                if(i==)
-                if(isStepEven&&isRow)
+                myArray[y,x] = i;               
+                if(x>=minX&&x<maxX&&y>=minY&&y>maxY)
                 {
                     x+=1;
-                    myArray[y,x] = i;
+                    myArray[y,x] = i; 
                 }
-                if(isStepEven&&!isRow)
+                else
                 {
-                    y+=1;
-                    myArray[y,x] = i;
+                    
                 }
-                if(!isStepEven&&isRow)
-                {
-                    x-=1;
-                    myArray[y,x] = i;
-                }
-
             }
             
             
