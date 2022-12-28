@@ -7,7 +7,7 @@ namespace Task5
         public MyIntMatrixArray(int sizeOfMatrix)
         {
             this.myArray = new int[sizeOfMatrix,sizeOfMatrix];
-            this.size = sizeOfMatrix;
+            this.size = sizeOfMatrix*sizeOfMatrix;
         }
         public void Print()
         {
@@ -49,8 +49,8 @@ namespace Task5
                 {
                     minX+=1;
                     minY+=1;
-                    maxX+=1;
-                    maxY+=1;
+                    maxX-=1;
+                    maxY-=1;
                 }              
                 if(y==minY&&x<maxX) 
                 {
