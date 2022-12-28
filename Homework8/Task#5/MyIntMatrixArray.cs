@@ -8,7 +8,6 @@ namespace Task5
         {
             this.myArray = new int[sizeOfMatrix,sizeOfMatrix];
             this.size = sizeOfMatrix;
-            
         }
         public void Print()
         {
@@ -30,7 +29,6 @@ namespace Task5
                 Console.WriteLine();
             } 
         }
-        
         private void FillArray()
         {
             int x = 0,
@@ -61,27 +59,17 @@ namespace Task5
                             x-=1;
                             myArray[y,x] = i;
                         }
+                        else
+                        {
+                            if(x==minX&&y<minY-1)
+                            {
+                                y=-1;
+                                myArray[y,x] = i;
+                            }
+                        }
                     }
                 }
-                
-                   
-                   else
-                   {
-                        if(y==maxY&&x>=minX)
-                        {
-                            
-                            maxY-=1;
-                        }
-                   } 
-                }
-                }
-
-                
             }
-            
-            
         }
-        
     }    
-       
 }
