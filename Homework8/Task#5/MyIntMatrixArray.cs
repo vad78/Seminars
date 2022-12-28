@@ -70,27 +70,27 @@ namespace Task5
                         }
                         else
                         {
-                            if(x==minX&&y>=minY+1)
+                            if(x==minX&&y>minY+1)
                             {
                                 y-=1;
                                 myArray[y,x] = i;
                                 fourthSideFilled = true;
                             }
                             else
-                            if (firstSideFilled&&secondSideFilled&&thirdSideFilled&&fourthSideFilled)
-                {
-                    
-                    {
-                        minX+=1;
-                    minY+=1;
-                    maxX-=1;
-                    maxY-=1;
-                    firstSideFilled = false;
-                    secondSideFilled = false;
-                    thirdSideFilled = false;
-                    fourthSideFilled = false;
-                    }
-                }
+                            {
+                                if (firstSideFilled&&secondSideFilled&&thirdSideFilled&&fourthSideFilled)
+                                {
+                                    minX+=1;
+                    			    minY+=1;
+                    			    maxX-=1;
+                   				    maxY-=1;
+                   				    x+=1;
+                    			    firstSideFilled = false;
+                    			    secondSideFilled = false;
+                    			    thirdSideFilled = false;
+                    			    fourthSideFilled = false;
+                                }
+                            }
                         }
                     }
                 }
