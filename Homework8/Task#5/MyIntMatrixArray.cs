@@ -45,17 +45,7 @@ namespace Task5
             for(int i = 1;i<=this.size;i++)
             {
                 myArray[y,x] = i; 
-                if (firstSideFilled&&secondSideFilled&&thirdSideFilled&&fourthSideFilled)
-                {
-                    minX+=1;
-                    minY+=1;
-                    maxX-=1;
-                    maxY-=1;
-                    firstSideFilled = false;
-                    secondSideFilled = false;
-                    thirdSideFilled = false;
-                    fourthSideFilled = false;
-                }              
+                              
                 if(y==minY&&x<maxX) 
                 {
                     x+=1;
@@ -86,6 +76,21 @@ namespace Task5
                                 myArray[y,x] = i;
                                 fourthSideFilled = true;
                             }
+                            else
+                            if (firstSideFilled&&secondSideFilled&&thirdSideFilled&&fourthSideFilled)
+                {
+                    
+                    {
+                        minX+=1;
+                    minY+=1;
+                    maxX-=1;
+                    maxY-=1;
+                    firstSideFilled = false;
+                    secondSideFilled = false;
+                    thirdSideFilled = false;
+                    fourthSideFilled = false;
+                    }
+                }
                         }
                     }
                 }
