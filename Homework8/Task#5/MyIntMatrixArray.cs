@@ -42,27 +42,41 @@ namespace Task5
             for(int i = 1;i<=this.size;i++)
             {
                 myArray[y,x] = i;               
-                if(x>=minX&&x<maxX&&y>=minY&&y>maxY)
+                if(y==minY&&x<maxX) 
                 {
                     x+=1;
                     myArray[y,x] = i; 
                 }
                 else
                 {
-                   if(x==maxX&&y<=minY&&y<maxY)
-                   {
+                    if(x==maxX&&y<maxY)
+                    {
                         y+=1;
                         myArray[y,x] = i;
-                        maxX-=1;
-                   }
+                    }
+                    else
+                    {
+                        if(y==maxY&&x>minX)
+                        {
+                            x-=1;
+                            myArray[y,x] = i;
+                        }
+                    }
+                }
+                
+                   
                    else
                    {
                         if(y==maxY&&x>=minX)
                         {
                             
+                            maxY-=1;
                         }
                    } 
                 }
+                }
+
+                
             }
             
             
