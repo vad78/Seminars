@@ -49,7 +49,19 @@ namespace Task5
                 }
                 else
                 {
-                    
+                   if(x==maxX&&y<=minY&&y<maxY)
+                   {
+                        y+=1;
+                        myArray[y,x] = i;
+                        maxX-=1;
+                   }
+                   else
+                   {
+                        if(y==maxY&&x>=minX)
+                        {
+                            
+                        }
+                   } 
                 }
             }
             
